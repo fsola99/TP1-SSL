@@ -10,7 +10,7 @@ int main()
 
     if (entrada == NULL)
     {
-        printf("\nError de apertura del archivo. \n\n");
+        printf("\nError de apertura del archivo.\n");
     }
     else
     {
