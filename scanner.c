@@ -11,8 +11,8 @@ void get_token ()
         if (leyendo == ',')                         // ES SEPARADOR
         {
             token = SEP;
-            aux_cadena = 0;
             printf("Separador: ,\n");
+            aux_cadena = 0;
             leyendo = getchar ();
         }
         else if (isspace(leyendo))                  // ES ESPACIO
@@ -35,6 +35,7 @@ void get_token ()
                 leyendo = getchar ();
             }
         }
+        leyendo = getchar ();
     }
     printf("\nFin De Texto: ");
 }
