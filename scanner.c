@@ -8,18 +8,17 @@ void get_token ()
     char leyendo = getchar ();
     while (leyendo !=EOF)
     {
+        if (isspace(leyendo))                  // ES ESPACIO
+        {
+            aux_cadena = 0;
+        }
         if (leyendo == ',')                         // ES SEPARADOR
         {
             token = SEP;
             printf("\nSeparador: ,");
             aux_cadena = 0;
         }
-        else if (isspace(leyendo))                  // ES ESPACIO
-        {
-            aux_cadena = 0;
-            break;
-        }
-        else                                        // ES CADENA
+        if (isdigit(leyendo) || isalpha(leyendo))                                       // ES CADENA
         {
             token = CAD;
             if (aux_cadena==0)
