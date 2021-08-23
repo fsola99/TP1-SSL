@@ -1,10 +1,5 @@
 #include "scanner.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <conio.h>
-#include <ctype.h>
-
 void get_token ()
 {
     enum t_token token;
