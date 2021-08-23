@@ -13,6 +13,7 @@ void get_token ()
             token = SEP;
             aux_cadena = 0;
             printf("Separador: ,\n");
+            leyendo = getchar ();
         }
         else if (isspace(leyendo))                  // ES ESPACIO
         {
@@ -24,14 +25,16 @@ void get_token ()
             token = CAD;
             if (aux_cadena==0)
             {
-                printf("Cadena: ");
+                printf("\nCadena: %c",leyendo);
                 aux_cadena=1;
+                leyendo = getchar ();
             }
             else
             {
                 printf("%c",leyendo);
+                leyendo = getchar ();
             }
         }
     }
-    printf("Fin De Texto: ");
+    printf("\nFin De Texto: ");
 }
