@@ -7,11 +7,11 @@
 #include <conio.h>
 #include <ctype.h>
 
-enum t_token {
+/*enum t_token {
     FDT,
     SEP,
     CAD
-};
+};*/
 
 void get_token ();
 

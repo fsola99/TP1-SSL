@@ -2,25 +2,25 @@
 
 void get_token ()
 {
-    enum t_token token;
+    //enum t_token token;
     int aux_cadena = 0;
     
     char leyendo = getchar ();
     while (leyendo !=EOF)
     {
-        if (isspace(leyendo))                  // ES ESPACIO
+        if (isspace(leyendo))                               // ES ESPACIO
         {
             aux_cadena = 0;
         }
-        if (leyendo == ',')                         // ES SEPARADOR
+        if (leyendo == ',')                                 // ES SEPARADOR
         {
-            token = SEP;
+            //token = SEP;
             printf("\nSeparador: ,");
             aux_cadena = 0;
         }
-        if (isdigit(leyendo) || isalpha(leyendo))                                       // ES CADENA
+        if (isdigit(leyendo) || isalpha(leyendo))            // ES CADENA
         {
-            token = CAD;
+            //token = CAD;
             if (aux_cadena==0)
             {
                 printf("\nCadena: %c",leyendo);
