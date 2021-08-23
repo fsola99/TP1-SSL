@@ -27,15 +27,13 @@ void get_token ()
             {
                 printf("\nCadena: %c",leyendo);
                 aux_cadena=1;
-                leyendo = getchar ();
             }
             else
             {
                 printf("%c",leyendo);
-                leyendo = getchar ();
             }
         }
-        leyendo = getchar ();
+        leyendo = getchar();
     }
     printf("\nFin De Texto: ");
 }
