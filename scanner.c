@@ -1,36 +1,42 @@
+#include "scanner.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <conio.h>
 #include <ctype.h>
 
-int esComa (char a)
+void get_token ()
 {
-    if (a==',')
+    enum t_token token;
+    int aux_cadena = 0;
+    
+    char leyendo = getchar ();
+    while (leyendo !=EOF)
     {
-        return 1;
+        if (leyendo == ',')                         // ES SEPARADOR
+        {
+            token = SEP;
+            aux_cadena = 0;
+            printf("Separador: ,\n");
+        }
+        else if (isspace(leyendo))                  // ES ESPACIO
+        {
+            aux_cadena = 0;
+            leyendo = getchar ();
+        }
+        else                                        // ES CADENA
+        {
+            token = CAD;
+            if (aux_cadena==0)
+            {
+                printf("Cadena: ");
+                aux_cadena=1;
+            }
+            else
+            {
+                printf("%c",leyendo);
+            }
+        }
     }
-    else
-    {
-        return 0;
-    }
-}
-
-enum tokens {E0F,esComa,isspace};
-
-int get_token (tokens)
-{
-    int num=100;
-    if (E0F)
-    {
-        num = 0;
-    }
-    else if (esComa)
-    {
-        num = 1;
-    }
-    else if (isspace)
-    {
-        num = 2;
-    }
-    return num;
+    printf("Fin De Texto: ");
 }
