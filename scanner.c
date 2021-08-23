@@ -11,14 +11,13 @@ void get_token ()
         if (leyendo == ',')                         // ES SEPARADOR
         {
             token = SEP;
-            printf("Separador: ,\n");
+            printf("\nSeparador: ,");
             aux_cadena = 0;
-            leyendo = getchar ();
         }
         else if (isspace(leyendo))                  // ES ESPACIO
         {
             aux_cadena = 0;
-            leyendo = getchar ();
+            break;
         }
         else                                        // ES CADENA
         {
