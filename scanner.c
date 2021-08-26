@@ -18,7 +18,7 @@ void get_token ()
             printf("\nSeparador: ,");
             aux_cadena = 0;
         }
-        if (isdigit(leyendo) || isalpha(leyendo))            // ES CADENA
+        if (isdigit(leyendo) || isalpha(leyendo) || ispunct(leyendo) && leyendo != ',')            // ES CADENA
         {
             //token = CAD;
             if (aux_cadena==0)
