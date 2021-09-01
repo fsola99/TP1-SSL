@@ -13,7 +13,7 @@ int main ()
         {
             printf("Cadena: ");
         }
-        else
+        else if (token == SEP)
         {
             printf("Separador: ");
         }

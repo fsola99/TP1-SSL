@@ -13,15 +13,15 @@ enum t_token get_token (char* buffer)
         }
         if (leyendo == ',')                                 // ES SEPARADOR
         {
-            buffer[0]=leyendo;
+            buffer[0]=',';
             token = SEP;
+            return token;
         }
         if (isdigit(leyendo) || isalpha(leyendo) || ispunct(leyendo) && leyendo != ',')            // ES CADENA
         {
-            int i=0;
+            int i = 0;
             while(isdigit(leyendo) || isalpha(leyendo) || ispunct(leyendo) && leyendo != ',')
-            {
-                
+            { 
                 buffer[i]=leyendo;
                 i++;
                 leyendo = getchar();
@@ -29,6 +29,7 @@ enum t_token get_token (char* buffer)
             ungetc(leyendo, stdin);
             buffer[i++] = '\0';
             token = CAD;
+            return token;
         }
         leyendo = getchar();
     }
