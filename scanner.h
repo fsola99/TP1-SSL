@@ -6,13 +6,18 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <ctype.h>
+#include <string.h>
 
-/*enum t_token {
+#define TAM_MAX 100
+
+enum t_token {
     FDT,
     SEP,
     CAD
-};*/
+};
 
-void get_token ();
+enum t_token get_token ();
+
+void vaciar_array(char* buffer);
 
 #endif

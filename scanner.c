@@ -1,37 +1,45 @@
 #include "scanner.h"
 
-void get_token ()
+enum t_token get_token (char* buffer)
 {
-    //enum t_token token;
-    int aux_cadena = 0;
+    enum t_token token;
     
     char leyendo = getchar ();
     while (leyendo !=EOF)
     {
         if (isspace(leyendo))                               // ES ESPACIO
         {
-            aux_cadena = 0;
+            leyendo = getchar();
         }
         if (leyendo == ',')                                 // ES SEPARADOR
         {
-            //token = SEP;
-            printf("\nSeparador: ,");
-            aux_cadena = 0;
+            buffer[0]=leyendo;
+            token = SEP;
         }
         if (isdigit(leyendo) || isalpha(leyendo) || ispunct(leyendo) && leyendo != ',')            // ES CADENA
         {
-            //token = CAD;
-            if (aux_cadena==0)
+            int i=0;
+            while(isdigit(leyendo) || isalpha(leyendo) || ispunct(leyendo) && leyendo != ',')
             {
-                printf("\nCadena: %c",leyendo);
-                aux_cadena=1;
+                
+                buffer[i]=leyendo;
+                i++;
+                leyendo = getchar();
             }
-            else
-            {
-                printf("%c",leyendo);
-            }
+            ungetc(leyendo, stdin);
+            buffer[i++] = '\0';
+            token = CAD;
         }
         leyendo = getchar();
     }
-    printf("\nFin De Texto: ");
+    token = FDT;
+    return token;
+}
+
+void vaciar_buffer(char* buffer)
+{   
+    for (int i=0;i<=TAM_MAX;i++) 
+    {
+        buffer[i] = '\0';
+    }
 }
