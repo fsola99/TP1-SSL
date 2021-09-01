@@ -36,7 +36,7 @@ enum t_token get_token (char* buffer)
     return token;
 }
 
-void vaciar_buffer(char* buffer)
+void vaciar_array(char* buffer)
 {   
     for (int i=0;i<=TAM_MAX;i++) 
     {
